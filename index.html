@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="fas fa-bars"></a>
+      <ul>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+        <li><a href="#">dishes</a></li>
+        <li><a href="#">login</a></li>
+      </ul>
+    </header>
+    <section class="container">
+      <div class="content">
+        <h1>
+          <span class="span1">better</span>
+          <span class="span2">food,</span> better life
+        </h1>
+        <a href="#" class="btn"
+          >read more
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <div class="icons">
+          <a href="" class="fab fa-facebook-f"></a>
+          <a href="" class="fab fa-twitter"></a>
+          <a href="" class="fab fa-instagram"></a>
+        </div>
+      </div>
+      <div class="image"></div>
+      <div class="cursor"></div>
+    </section>
+    <!-- jquery file cdn link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".container").mousemove(function (e) {
+          var x = e.pageX + "px";
+          var y = e.pageY + "px";
+          $(".cursor").css({ top: y, left: x });
+        });
+        var images = new Array(
+          "images/food1.jpg",
+          "images/food2.jpg",
+          "images/food3.jpg",
+          "images/food4.jpg",
+          "images/food5.jpg",
+          "images/food6.jpg",
+          "images/food7.jpg",
+          "images/food8.jpg",
+          "images/food9.jpg",
+          "images/food10.jpg",
+          "images/food11.jpg"
+        );
+        setInterval(() => {
+          var random = images[Math.floor(Math.random() * images.length)];
+          $(".image").css("background", "url(" + random + ")");
+        }, 2500);
+      });
+    </script>
+  </body>
+</html>
